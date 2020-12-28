@@ -14,10 +14,10 @@ public class OnlineStatCarAreaController {
     @Autowired
     private OnlineStatCarAreaService carAreaService;
 
-    @RequestMapping("/carlocation/{ymd}/{timeMark}")
+    @RequestMapping("/cararea/{ymd}/{timeMark}")
     @ResponseBody
     public String selectPeriodTime(@PathVariable String ymd,@PathVariable String timeMark){
-        return (String) JSONArray.toJSON(carAreaService.selectPeriodTime(ymd,timeMark));
+        return JSONArray.toJSON(carAreaService.selectPeriodTime(ymd,timeMark)).toString();
     }
 
 }
